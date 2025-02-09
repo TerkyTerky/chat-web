@@ -1,4 +1,4 @@
-import pluginVue, { rules } from 'eslint-plugin-vue'
+import pluginVue from 'eslint-plugin-vue'
 import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript'
 
 // To allow more languages other than `ts` in `.vue` files, uncomment the following lines:
@@ -19,5 +19,10 @@ export default defineConfigWithVueTs(
 
   pluginVue.configs['flat/essential'],
   vueTsConfigs.recommended,
-  rules,
+  {
+    rules: {
+      'quotes': ['error', 'single'],
+      'vue/multi-word-component-names': 'off',
+    }
+  }
 )
